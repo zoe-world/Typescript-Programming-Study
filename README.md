@@ -25,7 +25,7 @@
 
 ## 🧾 주차별 기록
 
-- 깃허브([위키]())에서 주차별 학습 범위를 기록합니다.
+- 깃허브([위키](https://github.com/zoe-world/Typescript-Programming-Study/wiki))에서 주차별 학습 범위를 기록합니다.
 
 ## 📚 깃헙 레포 사용 방법
 
