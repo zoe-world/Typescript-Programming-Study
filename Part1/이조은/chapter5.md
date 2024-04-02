@@ -146,7 +146,7 @@ Type alias & { name : string } 이런 것도 가능하다.
 type Name = string;
 type Name = number;
 
-이러면 에러가 난다.
+이러면 ㅌㅌ에러가 난다.
 
 나중에 type 키워드랑 매우 유사한 interface 키워드를 배우게 되는데,
 이 키워드를 쓰면 재정의가 가능하다. 재정의하면 & 하는거랑 똑같은 기능을 하는데
