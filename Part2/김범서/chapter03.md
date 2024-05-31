@@ -10,7 +10,7 @@
   (`never` 타입엔 다른 모든 타입이 할당될 수 없다.)
 - 함수의 마지막에 도달할 수 없다.
 
-```
+```ts
 function foo2(x: string | number): boolean {
   if (typeof x === "string") {
     return true;
@@ -34,9 +34,9 @@ console.log(foo2(tmp));
 
 - 함수가 무한히 실행되는경우
 
-```
+```ts
 function 함수(): never {
-  while ( true ) {
+  while (true) {
     console.log(123);
   }
 }
@@ -44,9 +44,9 @@ function 함수(): never {
 
 - 함수가 에러를 발생시키는 경우
 
-```
+```ts
 function 함수(): never {
-  throw new Error('에러메세지');
+  throw new Error("에러메세지");
 }
 ```
 
@@ -55,9 +55,9 @@ function 함수(): never {
 
 ### 파라미터가 never 타입이 되는 경우
 
-```
+```ts
 function myFunction(parameter: string) {
-  if ( typeof parameter === "string"){
+  if (typeof parameter === "string") {
     parameter + 1;
   } else {
     parameter; // never 타입 발생
@@ -70,9 +70,9 @@ function myFunction(parameter: string) {
 
 #### 이렇게 해도 에러가 나지 않는다.
 
-```
+```ts
 function myFunction(parameter: string) {
-    parameter + 1;
+  parameter + 1;
 }
 ```
 
@@ -83,7 +83,7 @@ function myFunction(parameter: string) {
 함수 선언문이 아무것도 return 하지 않고 끝나지도 않을 경우 void 타입이 자동으로 return 타입으로 할당되며,  
 함수 표현식이 아무것도 return 하지 않고 끝나지도 않을 경우 never 타입이 자동으로 return 타입으로 할당된다.
 
-```
+```ts
 // 함수 선언문
 function myFunction() {
   throw new Error();
@@ -92,13 +92,13 @@ function myFunction() {
 // 함수 표현식
 let myFunction2 = function () {
   throw new Error();
-}
+};
 ```
 
 명시적으로 return 타입을 지정해줄 경우 void타입 지정 가능하다.
 
-```
+```ts
 let myFunction2 = function (): void {
   throw new Error();
-}
+};
 ```

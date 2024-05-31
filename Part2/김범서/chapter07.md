@@ -7,13 +7,13 @@ Generic 함수는 파라미터로 타입을 입력하는 함수다.
 함수에 `<>` 괄호를 열면 파라미터를 입력할 수 있다.  
 타입파라미터 문법으로 이 괄호 안에는 타입만 입력할 수 있다.
 
-```
+```ts
 function myFunction<MyType>(x: MyType[]): MyType {
   return x[0];
 }
 
 let a = myFunction<number>([4, 2]);
-let b = myFunction<string>(['kim', 'park']);
+let b = myFunction<string>(["kim", "park"]);
 ```
 
 `myFunction<number>()` 를 사용하게 되면 `MyType` 에는 `number` 타입이 할당된다.
@@ -22,7 +22,7 @@ let b = myFunction<string>(['kim', 'park']);
 
 `extends` 문법을 사용해 넣을 수 있는 타입을 제한할 수 있다.
 
-```
+```ts
 function myFunction<MyType extends number>(x: MyType) {
   return x - 1;
 }
@@ -38,27 +38,27 @@ let a = myFunction<number>(100);
 
 문자로 파라미터를 넣으면 자릿수를 세어서 출력해주는 함수를 Generic으로 만들었다.
 
-```
+```ts
 function myFunction<MyType>(x: MyType) {
   return x.length; // 'MyType' 형식에 'length' 속성이 없습니다.
 }
 
-let a = myFunction<string>('hello');
+let a = myFunction<string>("hello");
 ```
 
 `string` 타입에 `.length` 를 사용했지만 에러가 발생한다.  
 이유는 `MyType` 에 `string` 을 넣었지만 나중에 `number` 타입과 같은 다른 타입이 들어올 수도 있기 때문에 조작을 일단 방지해준다.
 
-```
+```ts
 interface lengthCheck {
-  length : number
+  length: number;
 }
 
 function myFunction<MyType extends lengthCheck>(x: MyType) {
-  return x.length
+  return x.length;
 }
 
-let a = myFunction<string>('hello'); // 가능
+let a = myFunction<string>("hello"); // 가능
 let a = myFunction<number>(1234); // 'number' 형식이 'lengthCheck' 제약 조건을 만족하지 않습니다.
 ```
 
@@ -85,8 +85,7 @@ class도 `class<MyType> {}` 과 같이 만들면 객체를 생성할 때 타입�
 `함수<Animal>(data)` 이렇게 쓰면 이 자리에 `{ name : 'dog' , age : 1 }` 이런 object 자료가 남아야합니다.  
 타입은 `Animal` 입니다.
 
-
-```
+```ts
 interface Animal {
   name: string;
   age: number;

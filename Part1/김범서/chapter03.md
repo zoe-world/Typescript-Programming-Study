@@ -5,9 +5,9 @@
 1. 함수로 들어오는 자료 (파라미터)
 2. 함수에서 나가는 자료 (return)
 
-```
+```ts
 function myFunction(x: number): number {
-    return x * 2;
+  return x * 2;
 }
 ```
 
@@ -15,9 +15,9 @@ function myFunction(x: number): number {
 
 return할 자료가 없는 함수의 타입으로 사용가능하다.
 
-```
+```ts
 function printSomething(): void {
-  console.log('안녕?');
+  console.log("안녕?");
 }
 
 function returnNothing(): void {
@@ -30,7 +30,7 @@ function returnNothing(): void {
 함수의 파라미터가 여부가 옵션일 경우 파라미터 우측에 `?` 표시를 해준다.  
 이를 `Optional Chaining` 이라 한다.
 
-```
+```ts
 function myFunction(x? :number) {
     ...
 }
@@ -40,7 +40,7 @@ myFunction(2); //가능
 
 위의 옵셔널 체이닝은 아래의 유니온 타입으로 표현한 방식과 결과가 같다.
 
-```
+```ts
 function myFunction(x : number | undefined) {
     ...
 }

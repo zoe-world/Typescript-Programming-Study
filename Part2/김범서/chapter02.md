@@ -4,7 +4,7 @@
 
 `&&` 연산자를 이용해 파라미터가 `null` 또는 `undefined` 일 경우를 빠르게 체크할 수 있다.
 
-```
+```ts
 function printAll(strs: string | undefined) {
   if (strs && typeof strs === "string") {
     console.log(strs);
@@ -25,9 +25,9 @@ falsy값으로는 다음과 같은 것들이 있다.
 
 #### `&&` 연산자 동작 예시
 
-```
+```ts
 1 && null && 3; // null
-undefined && '안녕' && 100; // undefined
+undefined && "안녕" && 100; // undefined
 ```
 
 falsy값이 반환될 경우 연산을 종료한다.
@@ -37,7 +37,7 @@ falsy값이 반환될 경우 연산을 종료한다.
 오브젝트가 속성명을 안에 가지고 있는지를 판별해준다.  
 `속성명 in 오브젝트` 형식으로 사용한다.
 
-```
+```ts
 type Fish = { swim: string };
 type Bird = { fly: string };
 
@@ -63,9 +63,9 @@ myFunction(bird); // 새
 class로부터 생산된 object라면 instanceof로 narrowing 이 가능하다.
 어떤 클래스로부터 new 키워드로 생산된 object들은 부모 클래스가 누구인지 검사할 수 있다.
 
-```
+```ts
 let date = new Date();
 if (date instanceof Date) {
-  console.log('참이에요');
+  console.log("참이에요");
 }
 ```

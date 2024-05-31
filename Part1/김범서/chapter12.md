@@ -4,37 +4,37 @@
 
 `interface` 를 통해 `object` 자료형의 타입을 보다 편리하게 지정가능하다.
 
-```
+```ts
 interface SquareType {
-  color: string,
-  width: number,
+  color: string;
+  width: number;
 }
 
-let square: SquareType = { color: 'red', width: 100 };
+let square: SquareType = { color: "red", width: 100 };
 ```
 
 ## `interface` 의 `extends`
 
 `extends` 는 오른쪽의 `interface` 를 복사해온다는 뜻이다.
 
-```
+```ts
 interface Student {
-  name: string,
+  name: string;
 }
 interface Teacher {
-  name: string,
-  age: number,
+  name: string;
+  age: number;
 }
 ```
 
 위의 두 `interface` 를 `extends` 를 이용해 아래와 같이 바꿀 수 있다.
 
-```
+```ts
 interface Student {
-  name: string,
+  name: string;
 }
 interface Teacher extends Student {
-  age: number
+  age: number;
 }
 ```
 
@@ -43,12 +43,12 @@ interface Teacher extends Student {
 `interface` 의 경우 타입이름의 중복선언을 허용해준다.  
 중복시 `extends` 한 것과 동일하게 동작한다.
 
-```
+```ts
 interface Animal {
-  name: string
+  name: string;
 }
 interface Animal {
-  legs: number
+  legs: number;
 }
 ```
 

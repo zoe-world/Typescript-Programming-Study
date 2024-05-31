@@ -4,14 +4,14 @@
 
 특정 글자나 숫자만 가질 수 있게 제한을 두는 타입을 literal type 이라고 한다.
 
-```
-let 방향: 'left' | 'right';
-방향 = 'left';
+```ts
+let 방향: "left" | "right";
+방향 = "left";
 ```
 
 ## literal type 문제점과 as const 문법
 
-```
+```ts
 var data = {
   name : 'kim'
 };
@@ -27,16 +27,16 @@ myFunction(data.name); // 'string' 형식의 인수는 '"kim"' 형식의 매개 
 
 ### 객체의 타입 지정을 통한 해결
 
-```
-var data: {name: 'kim'} = {
-  name : 'kim'
+```ts
+var data: { name: "kim" } = {
+  name: "kim",
 };
 ```
 
 ### assertion 을 통한 해결
 
-```
-myFunction(data.name as 'kim');
+```ts
+myFunction(data.name as "kim");
 ```
 
 ### as const 를 통한 해결
@@ -44,9 +44,9 @@ myFunction(data.name as 'kim');
 1. object의 value값을 그대로 타입으로 지정해준다.
 2. object 안의 속성들을 모두 `readonly` 로 바꿔준다.
 
-```
+```ts
 var data = {
-  name : 'kim'
+  name: "kim",
 } as const;
 ```
 
@@ -54,13 +54,13 @@ var data = {
 
 정상적으로 할당된다.
 
-```
+```ts
 var data = {
-  name : 'kim'
+  name: "kim",
 } as const;
 
 function myFunction(a: string) {
-	console.log(a);
+  console.log(a);
 }
 
 myFunction(data.name);
