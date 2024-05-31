@@ -4,14 +4,14 @@
 
 `declare` 를 쓰면 이미 정의된 변수나 함수, 타입을 재정의할 수 있다.
 
-```
+```ts
 // data.js
 
 var a = 10;
-var b = {name: 'kim'};
+var b = { name: "kim" };
 ```
 
-```
+```ts
 // index.ts
 
 declare let a: number;
@@ -39,20 +39,19 @@ tsconfig.json 안에 allowJs 옵션을 true로 켜두면 js파일도 타입지�
 거기 있는 모든 변수는 `export` 를 해줘야 다른 파일에서 사용할 수 있다.  
 그래서 타입스크립트 파일이 다른 파일에 영향끼치는걸 막고싶으면 `export` 키워드를 강제로 추가하면 된다.
 
-```
+```ts
 export {};
 ```
 
 ## `declare global`
 
-로컬 모듈에서 전역으로 변수를 만들고 싶을 때 사용 할 수 있다.  
+로컬 모듈에서 전역으로 변수를 만들고 싶을 때 사용 할 수 있다.
 
-```
+```ts
 declare global {
   type Dog = string;
-} 
+}
 ```
+
 로컬파일의 `declare global` 안에 선언한 타입은 프로젝트 내 모든 파일에서 사용할 수 있다.  
 일종의 namespace 문법인데 여기다 적은건 global 이라는 이름의 namespace에 추가된다고 볼 수 있다.
-
-

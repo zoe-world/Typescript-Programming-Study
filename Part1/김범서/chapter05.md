@@ -5,36 +5,36 @@
 타입 정의가 너무 길고 가독성이 떨어지거나 여러번 재사용하고 싶으면 `type` 키워드를 사용 할 수 있다.  
 타입명은 관습적으로 대문자로 시작한다.
 
-```
+```ts
 type AnimalType = string | number | undefined;
-let animal :AnimalType;
+let animal: AnimalType;
 ```
 
 또한 `object` 타입도 저장가능하다.
 
-```
+```ts
 type PersonType = {
-  name : string,
-  age : number,
+  name: string;
+  age: number;
 };
 
-let teacher: PersonType = { name : 'john', age : 20 };
+let teacher: PersonType = { name: "john", age: 20 };
 ```
 
 ## object readonly 속성
 
 `readonly` 키워드는 속성 왼쪽에 붙일 수 있으며 특정 속성을 변경 불가능하게 잠궈준다.
 
-```
+```ts
 type GirlfriendType = {
-  readonly name : string,
+  readonly name: string;
 };
 
-let girlfriend :GirlfriendType = {
-  name : '엠버'
-}
+let girlfriend: GirlfriendType = {
+  name: "엠버",
+};
 
-girlfriend.name = '유라'; // 읽기 전용 속성이므로 'name'에 할당할 수 없습니다.
+girlfriend.name = "유라"; // 읽기 전용 속성이므로 'name'에 할당할 수 없습니다.
 ```
 
 ### TS 에러 주의사항
@@ -46,7 +46,7 @@ girlfriend.name = '유라'; // 읽기 전용 속성이므로 'name'에 할당할
 OR 연산자를 이용해서 Union type을 만들 수 있다.  
 `NewOne` 의 타입은 `string | number` 가 된다.
 
-```
+```ts
 type Name = string;
 type Age = number;
 
@@ -56,18 +56,18 @@ type NewOne = Name | Age;
 object에 지정한 타입의 경우 AND 연산자를 이용해 object 안의 두개의 속성을 합칠 수 있다.  
 `XandY` 타입은 `{ x : number, y : number }` 가 된다.
 
-```
+```ts
 type PositionX = { x: number };
 type PositionY = { y: number };
 
 type XandY = PositionX & PositionY;
 
-let position: XandY = { x : 1, y : 2 };
+let position: XandY = { x: 1, y: 2 };
 ```
 
 ### `type` 키워드는 재정의가 불가능하다.
 
-```
+```ts
 type Name = string;
 type Name = number; // 'Name' 식별자가 중복되었습니다.
 ```
@@ -76,24 +76,24 @@ type Name = number; // 'Name' 식별자가 중복되었습니다.
 
 중복된 속성의 타입이 같을 경우 문제없이 동작한다.
 
-```
+```ts
 type PositionX = { x: number };
 type PositionXY = { x: number; y: number };
 
 type Position = PositionX & PositionXY;
 
-const position: Position = {x: 1, y: 2};
+const position: Position = { x: 1, y: 2 };
 ```
 
 중복된 속성의 타입이 다를 경우 에러가 발생한다.
 
-```
+```ts
 type PositionX = { x: number };
 type PositionXY = { x: string; y: number };
 
 type Position = PositionX & PositionXY;
 
-const position: Position = {x: 1, y: 2}; // 'number' 형식은 'never' 형식에 할당할 수 없습니다.
+const position: Position = { x: 1, y: 2 }; // 'number' 형식은 'never' 형식에 할당할 수 없습니다.
 ```
 
 아래의 `Never` 타입의 특징으로 보아 절대 발생할 수 없는 타입이기 때문에 `Never` 타입으로 변환되는 것으로 보인다.
@@ -106,7 +106,7 @@ const position: Position = {x: 1, y: 2}; // 'number' 형식은 'never' 형식에
   (`never` 타입엔 다른 모든 타입이 할당될 수 없다.)
 - 함수의 마지막에 도달할 수 없다.
 
-```
+```ts
 function foo2(x: string | number): boolean {
   if (typeof x === "string") {
     return true;

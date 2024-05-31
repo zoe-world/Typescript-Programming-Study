@@ -4,8 +4,8 @@
 
 class는 `extends` 라는 문법을 쓰면 다른 class 만들 때 기존 class를 복사해 올 수 있다.
 
-```
-class NewUser extends User { }
+```ts
+class NewUser extends User {}
 ```
 
 ## `protected`
@@ -13,7 +13,7 @@ class NewUser extends User { }
 기본적으로 `private` 와 비슷한 역할을 한다.
 `protected` 를 사용하면 `extends` 된 class안에서도 사용이 가능해진다.
 
-```
+```ts
 class User {
   protected x = 10;
 }
@@ -36,7 +36,7 @@ class 하나 안에서만 쓸 수 있는 속성을 만들고 싶으면 `private`
 class { } 안에 집어넣는 변수, 함수는 전부 class로 부터 새로 생성되는 object (일명 instance) 에 부여된다.  
 근데 class에 직접 변수나 함수를 부여하고 싶으면 `static` 키워드를 왼쪽에 붙여주면 됩니다.
 
-```
+```ts
 class User {
   x = 10;
   y = 20;
@@ -49,7 +49,7 @@ User.x; //불가능
 
 `x` 와 `y` 같은 변수들은 `User` 로 부터 생성된 object들만 사용가능하다.
 
-```
+```ts
 class User {
   static x = 10;
   y = 20;
@@ -66,4 +66,4 @@ User.x; // 가능
 
 - 함수도 `static` 같은 키워드를 사용할 수 있다.
 - `extends` 로 class를 복사할 경우 `static` 도 함께 따라온다.
-- `static` 은 `private` , `protected` , `public` 키워드와 동시에 사용가능하다. 
+- `static` 은 `private` , `protected` , `public` 키워드와 동시에 사용가능하다.

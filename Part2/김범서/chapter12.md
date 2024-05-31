@@ -2,10 +2,12 @@
 
 이 파일은 타입만 저장할 수 있는 파일형식으로, .js파일로 컴파일되지 않는다.
 
-```
+```ts
 export type Age = number;
-export type multiply = (x :number ,y :number) => number
-export interface Person { name : string }
+export type multiply = (x: number, y: number) => number;
+export interface Person {
+  name: string;
+}
 ```
 
 ## 타입저장용으로 d.ts 사용하기
@@ -22,13 +24,13 @@ export interface Person { name : string }
 tsconfig 파일에 `declaration` 옵션을 `true` 로 설정한다.
 파일을 저장하면 자동으로 ts파일마다 d.ts 파일이 생성된다.
 
-```
+```json
 // tsconfig.json
 
 {
-    "compilerOptions": {
-        "declaration": true,
-    }
+  "compilerOptions": {
+    "declaration": true
+  }
 }
 ```
 
@@ -41,6 +43,6 @@ tsconfig 파일에 `declaration` 옵션을 `true` 로 설정한다.
   github repository로 대부분 라이브러리의 타입정의 파일을 찾을 수 있다.
 
 - npm으로 라이브러리 설치시 타입스크립트 타입이 정의된 버전을 따로 찾아서 설치할 수 있다.  
-  [TypeSearch](https://www.typescriptlang.org/dt/search?search=) 에서 타입이 정의된 npm 패키지를 검색 할 수 있다.   
+  [TypeSearch](https://www.typescriptlang.org/dt/search?search=) 에서 타입이 정의된 npm 패키지를 검색 할 수 있다.  
   타입이 정의된 라이브러리를 npm으로 설치하면 node_modules/@types 경로에 타입이 설치된다.  
   그리고 타입스크립트 컴파일러는 자동으로 여기 있는 타입 파일을 참고해서 타입을 가져온다.

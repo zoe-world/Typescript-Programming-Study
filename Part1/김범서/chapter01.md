@@ -5,8 +5,8 @@
 타입스크립트는 변수에 타입을 지정해 줄 수 있다.  
 변수명 옆에 타입명을 지정해준다.
 
-```
-let 이름: string = 'kim';
+```ts
+let 이름: string = "kim";
 ```
 
 위와 같이 `:`를 이용하여 자바스크립트 코드에 타입을 정의하는 방식을 타입 표기(Type Annotation)라고 한다.
@@ -32,15 +32,15 @@ let 이름: string = 'kim';
 
 타입이 문자열인 경우
 
-```
-let str: string = 'hi';
+```ts
+let str: string = "hi";
 ```
 
 ### Number
 
 타입이 숫자인 경우
 
-```
+```ts
 let num: number = 10;
 ```
 
@@ -48,38 +48,38 @@ let num: number = 10;
 
 타입이 진위값인 경우
 
-```
-let bool: boolean = false
+```ts
+let bool: boolean = false;
 ```
 
 ### Array
 
 타입이 배열인경우
 
-```
-let arr: number[] = [1,2,3];
+```ts
+let arr: number[] = [1, 2, 3];
 ```
 
 또는 제네릭
 
-```
-let arr: Array<number> = [1,2,3];
+```ts
+let arr: Array<number> = [1, 2, 3];
 ```
 
 ### Object
 
 타입이 객체인 경우
 
-```
-let object: { age : number } = { age : 20 };
+```ts
+let object: { age: number } = { age: 20 };
 ```
 
 ### Tuple
 
 배열의 길이가 고정되고 각 요소의 타입이 지정되어 있는 배열 형식
 
-```
-let arr: [string, number] = ['hi', 10];
+```ts
+let arr: [string, number] = ["hi", 10];
 ```
 
 ### Any & Unknown
@@ -89,17 +89,17 @@ any 타입은 타입실드 기능을 해제하여 타입을 바꿔도 에러가 
 
 **any**
 
-```
-let name: any = 'kim';
+```ts
+let name: any = "kim";
 ```
 
 **unknown**
 
-```
-let name: unknown = 'kim';
+```ts
+let name: unknown = "kim";
 ```
 
-```
+```ts
 name = 123;
 name = undefined;
 name = [];
@@ -110,9 +110,9 @@ name = [];
 반환 값이 없는 함수의 반환 타입.  
 return이 없거나 return이 있더라도 반환하는 값이 없으면 함수의 반환 타입을 void로 지정한다.
 
-```
+```ts
 function printSomething(): void {
-  console.log('바보야!');
+  console.log("바보야!");
 }
 
 function returnNothing(): void {

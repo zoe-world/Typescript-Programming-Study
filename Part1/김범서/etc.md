@@ -15,7 +15,7 @@ npx create-react-app my-app --template typescript
 .ts 파일을 .js파일로 컴파일 해준다.
 
 ## tsconfig.json 쓸만한 설정들 모음
-```
+```json
 {
  "compilerOptions": {
 
